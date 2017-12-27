@@ -1,10 +1,17 @@
 module Html.Safe.Attributes exposing (..)
 
-import Html.Internal exposing (todo)
+import Html as CoreHtml
+import Html.Attributes as Core
+import Html.Internal exposing (Supported, todo)
 
 
 type alias Attribute a msg =
     Html.Internal.Attribute a msg
+
+
+coerce : (a -> CoreHtml.Attribute msg) -> a -> Attribute b msg
+coerce =
+    Html.Internal.attrCoerce
 
 
 
@@ -318,14 +325,30 @@ srcdoc =
 
 
 -- INPUT
+{- TODO: `type_` could potentially take a hint from its arguments? -}
 
 
 {-| Defines the type of a `button`, `input`, `embed`, `object`, `script`,
 `source`, `style`, or `menu`.
 -}
-type_ : String -> Attribute compat msg
+type_ :
+    String
+    ->
+        Attribute
+            { compat
+                | a : Supported
+                , link : Supported
+                , button : Supported
+                , embed : Supported
+                , object : Supported
+                , source : Supported
+                , input : Supported
+                , ol : Supported
+                , script : Supported
+            }
+            msg
 type_ =
-    todo
+    coerce Core.type_
 
 
 {-| Defines a default value which will be displayed in a `button`, `option`,

@@ -3,6 +3,7 @@ module Html.Internal
         ( Attribute(..)
         , Html(..)
         , Supported(..)
+        , attrCoerce
         , attrToCore
         , coerce
         , toCore
@@ -61,3 +62,8 @@ attrToCore (Attribute attr) =
 todo : a -> b
 todo =
     Debug.crash "todo"
+
+
+attrCoerce : (a -> Core.Attribute msg) -> a -> Attribute b msg
+attrCoerce wrapped =
+    Attribute << wrapped

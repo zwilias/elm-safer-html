@@ -1,10 +1,7 @@
 module Html.Safe exposing (..)
 
-import Html.Internal exposing (Supported, todo)
-
-
-type alias Textual content =
-    { content | text : Supported }
+import Html as Core
+import Html.Internal exposing (Supported, coerce, todo)
 
 
 type alias Attribute a msg =
@@ -703,9 +700,9 @@ option =
 
 {-| Represents a multiline text edit control.
 -}
-textarea : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+textarea : List (Attribute { textarea : Supported } msg) -> List (Html b msg) -> Html c msg
 textarea =
-    todo
+    coerce "textarea" Core.textarea
 
 
 {-| Represents a key-pair generator control.
