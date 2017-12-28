@@ -21,21 +21,21 @@ element in a document.
 -}
 body : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 body =
-    todo
+    coerce "body" Core.body
 
 
 {-| Defines a section in a document.
 -}
 section : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 section =
-    todo
+    coerce "section" Core.section
 
 
 {-| Defines a section that contains only navigation links.
 -}
 nav : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 nav =
-    todo
+    coerce "nav" Core.nav
 
 
 {-| Defines self-contained content that could exist independently of the rest
@@ -43,7 +43,7 @@ of the content.
 -}
 article : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 article =
-    todo
+    coerce "article" Core.article
 
 
 {-| Defines some content loosely related to the page content. If it is removed,
@@ -51,43 +51,43 @@ the remaining content still makes sense.
 -}
 aside : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 aside =
-    todo
+    coerce "aside" Core.aside
 
 
 {-| -}
 h1 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 h1 =
-    todo
+    coerce "h1" Core.h1
 
 
 {-| -}
 h2 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 h2 =
-    todo
+    coerce "h2" Core.h2
 
 
 {-| -}
 h3 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 h3 =
-    todo
+    coerce "h3" Core.h3
 
 
 {-| -}
 h4 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 h4 =
-    todo
+    coerce "h4" Core.h4
 
 
 {-| -}
 h5 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 h5 =
-    todo
+    coerce "h5" Core.h5
 
 
 {-| -}
 h6 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 h6 =
-    todo
+    coerce "h6" Core.h6
 
 
 {-| Defines the header of a page or section. It often contains a logo, the
@@ -95,7 +95,7 @@ title of the web site, and a navigational table of content.
 -}
 header : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 header =
-    todo
+    coerce "header" Core.header
 
 
 {-| Defines the footer for a page or section. It often contains a copyright
@@ -103,14 +103,14 @@ notice, some links to legal information, or addresses to give feedback.
 -}
 footer : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 footer =
-    todo
+    coerce "footer" Core.footer
 
 
 {-| Defines a section containing contact information.
 -}
 address : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 address =
-    todo
+    coerce "address" Core.address
 
 
 {-| Defines the main or important content in the document. There is only one
@@ -118,7 +118,7 @@ address =
 -}
 main_ : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 main_ =
-    todo
+    coerce "main_" Core.main_
 
 
 
@@ -129,7 +129,7 @@ main_ =
 -}
 p : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 p =
-    todo
+    coerce "p" Core.p
 
 
 {-| Represents a thematic break between paragraphs of a section or article or
@@ -137,7 +137,7 @@ any longer content.
 -}
 hr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 hr =
-    todo
+    coerce "hr" Core.hr
 
 
 {-| Indicates that its content is preformatted and that this format must be
@@ -145,35 +145,43 @@ preserved.
 -}
 pre : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 pre =
-    todo
+    coerce "pre" Core.pre
 
 
 {-| Represents a content that is quoted from another source.
 -}
 blockquote : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 blockquote =
-    todo
+    coerce "blockquote" Core.blockquote
 
 
 {-| Defines an ordered list of items.
 -}
 ol : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 ol =
-    todo
+    coerce "ol" Core.ol
 
 
 {-| Defines an unordered list of items.
 -}
 ul : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 ul =
-    todo
+    coerce "ul" Core.ul
 
 
 {-| Defines a item of an enumeration list.
 -}
-li : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+li :
+    List
+        (Attribute
+            { value : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 li =
-    todo
+    coerce "li" Core.li
 
 
 {-| Defines a definition list, that is, a list of terms and their associated
@@ -181,42 +189,42 @@ definitions.
 -}
 dl : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 dl =
-    todo
+    coerce "dl" Core.dl
 
 
 {-| Represents a term defined by the next `dd`.
 -}
 dt : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 dt =
-    todo
+    coerce "dt" Core.dt
 
 
 {-| Represents the definition of the terms immediately listed before it.
 -}
 dd : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 dd =
-    todo
+    coerce "dd" Core.dd
 
 
 {-| Represents a figure illustrated as part of the document.
 -}
 figure : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 figure =
-    todo
+    coerce "figure" Core.figure
 
 
 {-| Represents the legend of a figure.
 -}
 figcaption : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 figcaption =
-    todo
+    coerce "figcaption" Core.figcaption
 
 
 {-| Represents a generic container with no special meaning.
 -}
 div : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 div =
-    todo
+    coerce "div" Core.div
 
 
 
@@ -225,23 +233,23 @@ div =
 
 {-| Represents a hyperlink, linking to another resource.
 -}
-a : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+a : List (Attribute { href : Supported } msg) -> List (Html b msg) -> Html c msg
 a =
-    todo
+    coerce "a" Core.a
 
 
 {-| Represents emphasized text, like a stress accent.
 -}
 em : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 em =
-    todo
+    coerce "em" Core.em
 
 
 {-| Represents especially important text.
 -}
 strong : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 strong =
-    todo
+    coerce "strong" Core.strong
 
 
 {-| Represents a side comment, that is, text like a disclaimer or a
@@ -249,28 +257,28 @@ copyright, which is not essential to the comprehension of the document.
 -}
 small : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 small =
-    todo
+    coerce "small" Core.small
 
 
 {-| Represents content that is no longer accurate or relevant.
 -}
 s : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 s =
-    todo
+    coerce "s" Core.s
 
 
 {-| Represents the title of a work.
 -}
 cite : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 cite =
-    todo
+    coerce "cite" Core.cite
 
 
 {-| Represents an inline quotation.
 -}
 q : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 q =
-    todo
+    coerce "q" Core.q
 
 
 {-| Represents a term whose definition is contained in its nearest ancestor
@@ -278,7 +286,7 @@ content.
 -}
 dfn : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 dfn =
-    todo
+    coerce "dfn" Core.dfn
 
 
 {-| Represents an abbreviation or an acronym; the expansion of the
@@ -286,7 +294,7 @@ abbreviation can be represented in the title attribute.
 -}
 abbr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 abbr =
-    todo
+    coerce "abbr" Core.abbr
 
 
 {-| Represents a date and time value; the machine-readable equivalent can be
@@ -294,14 +302,14 @@ represented in the datetime attribute.
 -}
 time : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 time =
-    todo
+    coerce "time" Core.time
 
 
 {-| Represents computer code.
 -}
 code : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 code =
-    todo
+    coerce "code" Core.code
 
 
 {-| Represents a variable. Specific cases where it should be used include an
@@ -311,14 +319,14 @@ parameter, or a mere placeholder in prose.
 -}
 var : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 var =
-    todo
+    coerce "var" Core.var
 
 
 {-| Represents the output of a program or a computer.
 -}
 samp : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 samp =
-    todo
+    coerce "samp" Core.samp
 
 
 {-| Represents user input, often from the keyboard, but not necessarily; it
@@ -326,21 +334,21 @@ may represent other input, like transcribed voice commands.
 -}
 kbd : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 kbd =
-    todo
+    coerce "kbd" Core.kbd
 
 
 {-| Represent a subscript.
 -}
 sub : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 sub =
-    todo
+    coerce "sub" Core.sub
 
 
 {-| Represent a superscript.
 -}
 sup : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 sup =
-    todo
+    coerce "sup" Core.sup
 
 
 {-| Represents some text in an alternate voice or mood, or at least of
@@ -349,7 +357,7 @@ idiomatic phrase, a thought, or a ship name.
 -}
 i : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 i =
-    todo
+    coerce "i" Core.i
 
 
 {-| Represents a text which to which attention is drawn for utilitarian
@@ -358,7 +366,7 @@ voice.
 -}
 b : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 b =
-    todo
+    coerce "b" Core.b
 
 
 {-| Represents a non-textual annoatation for which the conventional
@@ -367,7 +375,7 @@ labeling a proper name in Chinese text.
 -}
 u : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 u =
-    todo
+    coerce "u" Core.u
 
 
 {-| Represents text highlighted for reference purposes, that is for its
@@ -375,7 +383,7 @@ relevance in another context.
 -}
 mark : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 mark =
-    todo
+    coerce "mark" Core.mark
 
 
 {-| Represents content to be marked with ruby annotations, short runs of text
@@ -385,14 +393,14 @@ Japanese furigana.
 -}
 ruby : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 ruby =
-    todo
+    coerce "ruby" Core.ruby
 
 
 {-| Represents the text of a ruby annotation.
 -}
 rt : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 rt =
-    todo
+    coerce "rt" Core.rt
 
 
 {-| Represents parenthesis around a ruby annotation, used to display the
@@ -401,7 +409,7 @@ for annotations.
 -}
 rp : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 rp =
-    todo
+    coerce "rp" Core.rp
 
 
 {-| Represents text that must be isolated from its surrounding for
@@ -410,7 +418,7 @@ different, or unknown, directionality.
 -}
 bdi : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 bdi =
-    todo
+    coerce "bdi" Core.bdi
 
 
 {-| Represents the directionality of its children, in order to explicitly
@@ -418,7 +426,7 @@ override the Unicode bidirectional algorithm.
 -}
 bdo : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 bdo =
-    todo
+    coerce "bdo" Core.bdo
 
 
 {-| Represents text with no specific meaning. This has to be used when no other
@@ -427,14 +435,14 @@ often brought by global attributes like `class`, `lang`, or `dir`.
 -}
 span : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 span =
-    todo
+    coerce "span" Core.span
 
 
 {-| Represents a line break.
 -}
 br : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 br =
-    todo
+    coerce "br" Core.br
 
 
 {-| Represents a line break opportunity, that is a suggested point for
@@ -442,7 +450,7 @@ wrapping text in order to improve readability of text split on several lines.
 -}
 wbr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 wbr =
-    todo
+    coerce "wbr" Core.wbr
 
 
 
@@ -453,14 +461,14 @@ wbr =
 -}
 ins : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 ins =
-    todo
+    coerce "ins" Core.ins
 
 
 {-| Defines a removal from the document.
 -}
 del : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 del =
-    todo
+    coerce "del" Core.del
 
 
 
@@ -469,83 +477,186 @@ del =
 
 {-| Represents an image.
 -}
-img : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+img :
+    List
+        (Attribute
+            { src : Supported
+            , height : Supported
+            , width : Supported
+            , alt : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 img =
-    todo
+    coerce "img" Core.img
 
 
 {-| Embedded an HTML document.
 -}
-iframe : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+iframe :
+    List
+        (Attribute
+            { src : Supported
+            , height : Supported
+            , width : Supported
+            , sandbox : Supported
+            , seamless : Supported
+            , srcdoc : Supported
+            , name : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 iframe =
-    todo
+    coerce "iframe" Core.iframe
 
 
 {-| Represents a integration point for an external, often non-HTML,
 application or interactive content.
 -}
-embed : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+embed :
+    List
+        (Attribute
+            { src : Supported
+            , height : Supported
+            , width : Supported
+            , type_ : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 embed =
-    todo
+    coerce "embed" Core.embed
 
 
 {-| Represents an external resource, which is treated as an image, an HTML
 sub-document, or an external resource to be processed by a plug-in.
 -}
-object : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+object :
+    List
+        (Attribute
+            { height : Supported
+            , width : Supported
+            , type_ : Supported
+            , name : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 object =
-    todo
+    coerce "object" Core.object
 
 
 {-| Defines parameters for use by plug-ins invoked by `object` elements.
 -}
-param : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+param :
+    List
+        (Attribute
+            { value : Supported
+            , name : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 param =
-    todo
+    coerce "param" Core.param
 
 
 {-| Represents a video, the associated audio and captions, and controls.
 -}
-video : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+video :
+    List
+        (Attribute
+            { src : Supported
+            , height : Supported
+            , width : Supported
+            , autoplay : Supported
+            , controls : Supported
+            , loop : Supported
+            , preload : Supported
+            , poster : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 video =
-    todo
+    coerce "video" Core.video
 
 
 {-| Represents a sound or audio stream.
 -}
-audio : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+audio :
+    List
+        (Attribute
+            { src : Supported
+            , autoplay : Supported
+            , controls : Supported
+            , loop : Supported
+            , preload : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 audio =
-    todo
+    coerce "audio" Core.audio
 
 
 {-| Allows authors to specify alternative media resources for media elements
 like `video` or `audio`.
 -}
-source : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+source :
+    List
+        (Attribute
+            { src : Supported
+            , type_ : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 source =
-    todo
+    coerce "source" Core.source
 
 
 {-| Allows authors to specify timed text track for media elements like `video`
 or `audio`.
 -}
-track : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+track :
+    List
+        (Attribute
+            { src : Supported
+            , default : Supported
+            , kind : Supported
+            , srclang : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 track =
-    todo
+    coerce "track" Core.track
 
 
 {-| Represents a bitmap area for graphics rendering.
 -}
-canvas : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+canvas : List (Attribute { height : Supported, width : Supported } msg) -> List (Html b msg) -> Html c msg
 canvas =
-    todo
+    coerce "canvas" Core.canvas
 
 
 {-| Defines a mathematical formula.
 -}
 math : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 math =
-    todo
+    coerce "math" Core.math
 
 
 
@@ -556,70 +667,70 @@ math =
 -}
 table : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 table =
-    todo
+    coerce "table" Core.table
 
 
 {-| Represents the title of a table.
 -}
 caption : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 caption =
-    todo
+    coerce "caption" Core.caption
 
 
 {-| Represents a set of one or more columns of a table.
 -}
 colgroup : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 colgroup =
-    todo
+    coerce "colgroup" Core.colgroup
 
 
 {-| Represents a column of a table.
 -}
 col : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 col =
-    todo
+    coerce "col" Core.col
 
 
 {-| Represents the block of rows that describes the concrete data of a table.
 -}
 tbody : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 tbody =
-    todo
+    coerce "tbody" Core.tbody
 
 
 {-| Represents the block of rows that describes the column labels of a table.
 -}
 thead : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 thead =
-    todo
+    coerce "thead" Core.thead
 
 
 {-| Represents the block of rows that describes the column summaries of a table.
 -}
 tfoot : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 tfoot =
-    todo
+    coerce "tfoot" Core.tfoot
 
 
 {-| Represents a row of cells in a table.
 -}
 tr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 tr =
-    todo
+    coerce "tr" Core.tr
 
 
 {-| Represents a data cell in a table.
 -}
 td : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 td =
-    todo
+    coerce "td" Core.td
 
 
 {-| Represents a header cell in a table.
 -}
 th : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 th =
-    todo
+    coerce "th" Core.th
 
 
 
@@ -629,109 +740,268 @@ th =
 {-| Represents a form, consisting of controls, that can be submitted to a
 server for processing.
 -}
-form : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+form :
+    List
+        (Attribute
+            { accept : Supported
+            , acceptCharset : Supported
+            , action : Supported
+            , autocomplete : supported
+            , enctype : Supported
+            , method : Supported
+            , name : Supported
+            , novalidate : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 form =
-    todo
+    coerce "form" Core.form
 
 
 {-| Represents a set of controls.
 -}
-fieldset : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+fieldset :
+    List
+        (Attribute
+            { disabled : Supported
+            , name : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 fieldset =
-    todo
+    coerce "fieldset" Core.fieldset
 
 
 {-| Represents the caption for a `fieldset`.
 -}
 legend : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 legend =
-    todo
+    coerce "legend" Core.legend
 
 
 {-| Represents the caption of a form control.
 -}
-label : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+label :
+    List
+        (Attribute
+            { for : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 label =
-    todo
+    coerce "label" Core.label
 
 
 {-| Represents a typed data field allowing the user to edit the data.
 -}
-input : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+input :
+    List
+        (Attribute
+            { src : Supported
+            , height : Supported
+            , width : Supported
+            , alt : Supported
+            , type_ : Supported
+            , value : Supported
+            , defaultValue : Supported
+            , checked : Supported
+            , placeholder : Supported
+            , accept : Supported
+            , autocomplete : Supported
+            , autofocus : Supported
+            , disabled : Supported
+            , formaction : Supported
+            , list : Supported
+            , minlength : Supported
+            , maxLength : Supported
+            , multiple : Supported
+            , name : Supported
+            , pattern : Supported
+            , readonly : Supported
+            , required : Supported
+            , size : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 input =
-    todo
+    coerce "input" Core.input
 
 
 {-| Represents a button.
 -}
-button : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+button :
+    List
+        (Attribute
+            { type_ : Supported
+            , value : Supported
+            , autofocus : Supported
+            , disabled : Supported
+            , enctype : Supported
+            , name : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 button =
-    todo
+    coerce "button" Core.button
 
 
 {-| Represents a control allowing selection among a set of options.
 -}
-select : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+select :
+    List
+        (Attribute
+            { autofocus : Supported
+            , disabled : Supported
+            , multiple : Supported
+            , name : Supported
+            , required : Supported
+            , size : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 select =
-    todo
+    coerce "select" Core.select
 
 
 {-| Represents a set of predefined options for other controls.
 -}
 datalist : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 datalist =
-    todo
+    coerce "datalist" Core.datalist
 
 
 {-| Represents a set of options, logically grouped.
 -}
-optgroup : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+optgroup :
+    List
+        (Attribute
+            { disabled : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 optgroup =
-    todo
+    coerce "optgroup" Core.optgroup
 
 
 {-| Represents an option in a `select` element or a suggestion of a `datalist`
 element.
 -}
-option : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+option :
+    List
+        (Attribute
+            { value : Supported
+            , selected : Supported
+            , disabled : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 option =
-    todo
+    coerce "option" Core.option
 
 
 {-| Represents a multiline text edit control.
 -}
-textarea : List (Attribute { textarea : Supported } msg) -> List (Html b msg) -> Html c msg
+textarea :
+    List
+        (Attribute
+            { textarea : Supported
+            , value : Supported
+            , defaultValue : Supported
+            , placeholder : Supported
+            , autofocus : Supported
+            , disabled : Supported
+            , minlength : Supported
+            , maxlength : Supported
+            , name : Supported
+            , readonly : Supported
+            , required : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 textarea =
     coerce "textarea" Core.textarea
 
 
 {-| Represents a key-pair generator control.
 -}
-keygen : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+keygen :
+    List
+        (Attribute
+            { autofocus : Supported
+            , disabled : Supported
+            , name : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 keygen =
-    todo
+    coerce "keygen" Core.keygen
 
 
 {-| Represents the result of a calculation.
 -}
-output : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+output :
+    List
+        (Attribute
+            { name : Supported
+            , for : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 output =
-    todo
+    coerce "output" Core.output
 
 
 {-| Represents the completion progress of a task.
 -}
-progress : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+progress :
+    List
+        (Attribute
+            { value : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 progress =
-    todo
+    coerce "progress" Core.progress
 
 
 {-| Represents a scalar measurement (or a fractional value), within a known
 range.
 -}
-meter : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+meter :
+    List
+        (Attribute
+            { value : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 meter =
-    todo
+    coerce "meter" Core.meter
 
 
 
@@ -743,25 +1013,25 @@ or controls.
 -}
 details : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 details =
-    todo
+    coerce "details" Core.details
 
 
 {-| Represents a summary, caption, or legend for a given `details`.
 -}
 summary : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 summary =
-    todo
+    coerce "summary" Core.summary
 
 
 {-| Represents a command that the user can invoke.
 -}
 menuitem : List (Attribute a msg) -> List (Html b msg) -> Html c msg
 menuitem =
-    todo
+    coerce "menuitem" Core.menuitem
 
 
 {-| Represents a list of commands.
 -}
-menu : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+menu : List (Attribute { type_ : Supported } msg) -> List (Html b msg) -> Html c msg
 menu =
-    todo
+    coerce "menu" Core.menu

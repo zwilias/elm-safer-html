@@ -22,14 +22,14 @@ coerce =
 -}
 class : String -> Attribute compat msg
 class =
-    todo
+    coerce Core.class
 
 
 {-| Indicates the relevance of an element.
 -}
 hidden : Bool -> Attribute compat msg
 hidden =
-    todo
+    coerce Core.hidden
 
 
 {-| Often used with CSS to style a specific element. The value of this
@@ -37,14 +37,14 @@ attribute must be unique.
 -}
 id : String -> Attribute compat msg
 id =
-    todo
+    coerce Core.id
 
 
 {-| Text to be displayed in a tooltip when hovering over the element.
 -}
 title : String -> Attribute compat msg
 title =
-    todo
+    coerce Core.title
 
 
 
@@ -55,14 +55,14 @@ title =
 -}
 accesskey : Char -> Attribute compat msg
 accesskey =
-    todo
+    coerce Core.accesskey
 
 
 {-| Indicates whether the element's content is editable.
 -}
 contenteditable : Bool -> Attribute compat msg
 contenteditable =
-    todo
+    coerce Core.contenteditable
 
 
 {-| Defines the ID of a `menu` element which will serve as the element's
@@ -70,7 +70,7 @@ context menu.
 -}
 contextmenu : String -> Attribute compat msg
 contextmenu =
-    todo
+    coerce Core.contextmenu
 
 
 {-| Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl
@@ -78,41 +78,41 @@ contextmenu =
 -}
 dir : String -> Attribute compat msg
 dir =
-    todo
+    coerce Core.dir
 
 
 {-| Defines whether the element can be dragged.
 -}
 draggable : String -> Attribute compat msg
 draggable =
-    todo
+    coerce Core.draggable
 
 
 {-| Indicates that the element accept the dropping of content on it.
 -}
 dropzone : String -> Attribute compat msg
 dropzone =
-    todo
+    coerce Core.dropzone
 
 
 {-| -}
 itemprop : String -> Attribute compat msg
 itemprop =
-    todo
+    coerce Core.itemprop
 
 
 {-| Defines the language used in the element.
 -}
 lang : String -> Attribute compat msg
 lang =
-    todo
+    coerce Core.lang
 
 
 {-| Indicates whether spell checking is allowed for the element.
 -}
 spellcheck : Bool -> Attribute compat msg
 spellcheck =
-    todo
+    coerce Core.spellcheck
 
 
 {-| Overrides the browser's default tab order and follows the one specified
@@ -120,71 +120,7 @@ instead.
 -}
 tabindex : Int -> Attribute compat msg
 tabindex =
-    todo
-
-
-
--- HEADER STUFF
-
-
-{-| Indicates that the `script` should be executed asynchronously.
--}
-async : Bool -> Attribute compat msg
-async =
-    todo
-
-
-{-| Declares the character encoding of the page or script. Common values include:
-
-  - UTF-8 - Character encoding for Unicode
-  - ISO-8859-1 - Character encoding for the Latin alphabet
-
-For `meta` and `script`.
-
--}
-charset : String -> Attribute compat msg
-charset =
-    todo
-
-
-{-| A value associated with http-equiv or name depending on the context. For
-`meta`.
--}
-content : String -> Attribute compat msg
-content =
-    todo
-
-
-{-| Indicates that a `script` should be executed after the page has been
-parsed.
--}
-defer : Bool -> Attribute compat msg
-defer =
-    todo
-
-
-{-| This attribute is an indicator that is paired with the `content` attribute,
-indicating what that content means. `httpEquiv` can take on three different
-values: content-type, default-style, or refresh. For `meta`.
--}
-httpEquiv : String -> Attribute compat msg
-httpEquiv =
-    todo
-
-
-{-| Defines the script language used in a `script`.
--}
-language : String -> Attribute compat msg
-language =
-    todo
-
-
-{-| Indicates that a `style` should only apply to its parent and all of the
-parents children.
--}
-scoped : Bool -> Attribute compat msg
-scoped =
-    todo
+    coerce Core.tabindex
 
 
 
@@ -194,33 +130,33 @@ scoped =
 {-| The URL of the embeddable content. For `audio`, `embed`, `iframe`, `img`,
 `input`, `script`, `source`, `track`, and `video`.
 -}
-src : String -> Attribute compat msg
+src : String -> Attribute { compat | src : Supported } msg
 src =
-    todo
+    coerce Core.src
 
 
 {-| Declare the height of a `canvas`, `embed`, `iframe`, `img`, `input`,
 `object`, or `video`.
 -}
-height : Int -> Attribute compat msg
+height : Int -> Attribute { compat | height : Supported } msg
 height =
-    todo
+    coerce Core.height
 
 
 {-| Declare the width of a `canvas`, `embed`, `iframe`, `img`, `input`,
 `object`, or `video`.
 -}
-width : Int -> Attribute compat msg
+width : Int -> Attribute { compat | width : Supported } msg
 width =
-    todo
+    coerce Core.width
 
 
 {-| Alternative text in case an image can't be displayed. Works with `img`,
 `area`, and `input`.
 -}
-alt : String -> Attribute compat msg
+alt : String -> Attribute { compat | alt : Supported } msg
 alt =
-    todo
+    coerce Core.alt
 
 
 
@@ -229,55 +165,55 @@ alt =
 
 {-| The `audio` or `video` should play as soon as possible.
 -}
-autoplay : Bool -> Attribute compat msg
+autoplay : Bool -> Attribute { compat | autoplay : Supported } msg
 autoplay =
-    todo
+    coerce Core.autoplay
 
 
 {-| Indicates whether the browser should show playback controls for the `audio`
 or `video`.
 -}
-controls : Bool -> Attribute compat msg
+controls : Bool -> Attribute { compat | controls : Supported } msg
 controls =
-    todo
+    coerce Core.controls
 
 
 {-| Indicates whether the `audio` or `video` should start playing from the
 start when it's finished.
 -}
-loop : Bool -> Attribute compat msg
+loop : Bool -> Attribute { compat | loop : Supported } msg
 loop =
-    todo
+    coerce Core.loop
 
 
 {-| Control how much of an `audio` or `video` resource should be preloaded.
 -}
-preload : String -> Attribute compat msg
+preload : String -> Attribute { compat | preload : Supported } msg
 preload =
-    todo
+    coerce Core.preload
 
 
 {-| A URL indicating a poster frame to show until the user plays or seeks the
 `video`.
 -}
-poster : String -> Attribute compat msg
+poster : String -> Attribute { compat | poster : Supported } msg
 poster =
-    todo
+    coerce Core.poster
 
 
 {-| Indicates that the `track` should be enabled unless the user's preferences
 indicate something different.
 -}
-default : Bool -> Attribute compat msg
+default : Bool -> Attribute { compat | default : Supported } msg
 default =
-    todo
+    coerce Core.default
 
 
 {-| Specifies the kind of text `track`.
 -}
-kind : String -> Attribute compat msg
+kind : String -> Attribute { compat | kind : Supported } msg
 kind =
-    todo
+    coerce Core.kind
 
 
 
@@ -291,9 +227,9 @@ label : String -> Attribute compat msg
 
 {-| A two letter language code indicating the language of the `track` text data.
 -}
-srclang : String -> Attribute compat msg
+srclang : String -> Attribute { compat | srclang : Supported } msg
 srclang =
-    todo
+    coerce Core.srclang
 
 
 
@@ -303,50 +239,34 @@ srclang =
 {-| A space separated list of security restrictions you'd like to lift for an
 `iframe`.
 -}
-sandbox : String -> Attribute compat msg
+sandbox : String -> Attribute { compat | sandbox : Supported } msg
 sandbox =
-    todo
+    coerce Core.sandbox
 
 
 {-| Make an `iframe` look like part of the containing document.
 -}
-seamless : Bool -> Attribute compat msg
+seamless : Bool -> Attribute { compat | seamless : Supported } msg
 seamless =
-    todo
+    coerce Core.seamless
 
 
 {-| An HTML document that will be displayed as the body of an `iframe`. It will
 override the content of the `src` attribute if it has been specified.
 -}
-srcdoc : String -> Attribute compat msg
+srcdoc : String -> Attribute { compat | srcdoc : Supported } msg
 srcdoc =
-    todo
+    coerce Core.srcdoc
 
 
 
 -- INPUT
-{- TODO: `type_` could potentially take a hint from its arguments? -}
 
 
 {-| Defines the type of a `button`, `input`, `embed`, `object`, `script`,
 `source`, `style`, or `menu`.
 -}
-type_ :
-    String
-    ->
-        Attribute
-            { compat
-                | a : Supported
-                , link : Supported
-                , button : Supported
-                , embed : Supported
-                , object : Supported
-                , source : Supported
-                , input : Supported
-                , ol : Supported
-                , script : Supported
-            }
-            msg
+type_ : String -> Attribute { compat | type_ : Supported } msg
 type_ =
     coerce Core.type_
 
@@ -354,40 +274,40 @@ type_ =
 {-| Defines a default value which will be displayed in a `button`, `option`,
 `input`, `li`, `meter`, `progress`, or `param`.
 -}
-value : String -> Attribute compat msg
+value : String -> Attribute { compat | value : Supported } msg
 value =
-    todo
+    coerce Core.value
 
 
 {-| Defines an initial value which will be displayed in an `input` when that
 `input` is added to the DOM. Unlike `value`, altering `defaultValue` after the
 `input` element has been added to the DOM has no effect.
 -}
-defaultValue : String -> Attribute compat msg
+defaultValue : String -> Attribute { compat | defaultValue : Supported } msg
 defaultValue =
-    todo
+    coerce Core.defaultValue
 
 
 {-| Indicates whether an `input` of type checkbox is checked.
 -}
-checked : Bool -> Attribute compat msg
+checked : Bool -> Attribute { compat | checked : Supported } msg
 checked =
-    todo
+    coerce Core.checked
 
 
 {-| Provides a hint to the user of what can be entered into an `input` or
 `textarea`.
 -}
-placeholder : String -> Attribute compat msg
+placeholder : String -> Attribute { compat | placeholder : Supported } msg
 placeholder =
-    todo
+    coerce Core.placeholder
 
 
 {-| Defines which `option` will be selected on page load.
 -}
-selected : Bool -> Attribute compat msg
+selected : Bool -> Attribute { compat | selected : Supported } msg
 selected =
-    todo
+    coerce Core.selected
 
 
 
@@ -397,64 +317,64 @@ selected =
 {-| List of types the server accepts, typically a file type.
 For `form` and `input`.
 -}
-accept : String -> Attribute compat msg
+accept : String -> Attribute { compat | accept : Supported } msg
 accept =
-    todo
+    coerce Core.accept
 
 
 {-| List of supported charsets in a `form`.
 -}
-acceptCharset : String -> Attribute compat msg
+acceptCharset : String -> Attribute { compat | acceptCharset : Supported } msg
 acceptCharset =
-    todo
+    coerce Core.acceptCharset
 
 
 {-| The URI of a program that processes the information submitted via a `form`.
 -}
-action : String -> Attribute compat msg
+action : String -> Attribute { compat | action : Supported } msg
 action =
-    todo
+    coerce Core.action
 
 
 {-| Indicates whether a `form` or an `input` can have their values automatically
 completed by the browser.
 -}
-autocomplete : Bool -> Attribute compat msg
+autocomplete : Bool -> Attribute { compat | autocomplete : Supported } msg
 autocomplete =
-    todo
+    coerce Core.autocomplete
 
 
 {-| The element should be automatically focused after the page loaded.
 For `button`, `input`, `keygen`, `select`, and `textarea`.
 -}
-autofocus : Bool -> Attribute compat msg
+autofocus : Bool -> Attribute { compat | autofocus : Supported } msg
 autofocus =
-    todo
+    coerce Core.autofocus
 
 
 {-| Indicates whether the user can interact with a `button`, `fieldset`,
 `input`, `keygen`, `optgroup`, `option`, `select` or `textarea`.
 -}
-disabled : Bool -> Attribute compat msg
+disabled : Bool -> Attribute { compat | disabled : Supported } msg
 disabled =
-    todo
+    coerce Core.disabled
 
 
 {-| How `form` data should be encoded when submitted with the POST method.
 Options include: application/x-www-form-urlencoded, multipart/form-data, and
 text/plain.
 -}
-enctype : String -> Attribute compat msg
+enctype : String -> Attribute { compat | enctype : Supported } msg
 enctype =
-    todo
+    coerce Core.enctype
 
 
 {-| Indicates the action of an `input` or `button`. This overrides the action
 defined in the surrounding `form`.
 -}
-formaction : String -> Attribute compat msg
+formaction : String -> Attribute { compat | formaction : Supported } msg
 formaction =
-    todo
+    coerce Core.formaction
 
 
 {-| Associates an `input` with a `datalist` tag. The datalist gives some
@@ -462,81 +382,81 @@ pre-defined options to suggest to the user as they interact with an input.
 The value of the list attribute must match the id of a `datalist` node.
 For `input`.
 -}
-list : String -> Attribute compat msg
+list : String -> Attribute { compat | list : Supported } msg
 list =
-    todo
+    coerce Core.list
 
 
 {-| Defines the minimum number of characters allowed in an `input` or
 `textarea`.
 -}
-minlength : Int -> Attribute compat msg
+minlength : Int -> Attribute { compat | minlength : Supported } msg
 minlength =
-    todo
+    coerce Core.minlength
 
 
 {-| Defines the maximum number of characters allowed in an `input` or
 `textarea`.
 -}
-maxlength : Int -> Attribute compat msg
+maxlength : Int -> Attribute { compat | maxlength : Supported } msg
 maxlength =
-    todo
+    coerce Core.maxlength
 
 
 {-| Defines which HTTP method to use when submitting a `form`. Can be GET
 (default) or POST.
 -}
-method : String -> Attribute compat msg
+method : String -> Attribute { compat | method : Supported } msg
 method =
-    todo
+    coerce Core.method
 
 
 {-| Indicates whether multiple values can be entered in an `input` of type
 email or file. Can also indicate that you can `select` many options.
 -}
-multiple : Bool -> Attribute compat msg
+multiple : Bool -> Attribute { compat | multiple : Supported } msg
 multiple =
-    todo
+    coerce Core.multiple
 
 
 {-| Name of the element. For example used by the server to identify the fields
 in form submits. For `button`, `form`, `fieldset`, `iframe`, `input`, `keygen`,
 `object`, `output`, `select`, `textarea`, `map`, `meta`, and `param`.
 -}
-name : String -> Attribute compat msg
+name : String -> Attribute { compat | name : Supported } msg
 name =
-    todo
+    coerce Core.name
 
 
 {-| This attribute indicates that a `form` shouldn't be validated when
 submitted.
 -}
-novalidate : Bool -> Attribute compat msg
+novalidate : Bool -> Attribute { compat | novalidate : Supported } msg
 novalidate =
-    todo
+    coerce Core.novalidate
 
 
 {-| Defines a regular expression which an `input`'s value will be validated
 against.
 -}
-pattern : String -> Attribute compat msg
+pattern : String -> Attribute { compat | pattern : Supported } msg
 pattern =
-    todo
+    coerce Core.pattern
 
 
 {-| Indicates whether an `input` or `textarea` can be edited.
 -}
-readonly : Bool -> Attribute compat msg
+readonly : Bool -> Attribute { compat | readonly : Supported } msg
 readonly =
-    todo
+    coerce Core.readonly
 
 
 {-| Indicates whether this element is required to fill out or not.
 For `input`, `select`, and `textarea`.
 -}
-required : Bool -> Attribute compat msg
+required : Bool -> Attribute { compat | required : Supported } msg
 required =
-    todo
+    coerce Core.required
 
 
 {-| For `input` specifies the width of an input in characters.
@@ -544,17 +464,21 @@ required =
 For `select` specifies the number of visible options in a drop-down list.
 
 -}
-size : Int -> Attribute compat msg
+size : Int -> Attribute { compat | size : Supported } msg
 size =
-    todo
+    coerce Core.size
 
 
 {-| The element ID described by this `label` or the element IDs that are used
 for an `output`.
 -}
-for : String -> Attribute compat msg
+for : String -> Attribute { compat | for : Supported } msg
 for =
-    todo
+    coerce Core.for
+
+
+
+{- TODO: rest of file -}
 
 
 {-| Indicates the element ID of the `form` that owns this particular `button`,
@@ -705,9 +629,9 @@ cite =
 
 {-| The URL of a linked resource, such as `a`, `area`, `base`, or `link`.
 -}
-href : String -> Attribute compat msg
+href : String -> Attribute { compat | href : Supported } msg
 href =
-    todo
+    coerce Core.href
 
 
 {-| Specify where the results of clicking an `a`, `area`, `base`, or `form`
