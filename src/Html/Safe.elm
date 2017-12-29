@@ -897,10 +897,9 @@ wbr :
             }
             msg
         )
-    -> List (Html b msg)
     -> Html c msg
-wbr =
-    coerce "wbr" Core.wbr
+wbr attrs =
+    coerce "wbr" Core.wbr attrs []
 
 
 
@@ -1034,10 +1033,9 @@ param :
             }
             msg
         )
-    -> List (Html b msg)
     -> Html c msg
-param =
-    coerce "param" Core.param
+param attrs =
+    coerce "param" Core.param attrs []
 
 
 {-| Represents a video, the associated audio and captions, and controls.
@@ -1093,10 +1091,9 @@ source :
             }
             msg
         )
-    -> List (Html b msg)
     -> Html c msg
-source =
-    coerce "source" Core.source
+source attrs =
+    coerce "source" Core.source attrs []
 
 
 {-| Allows authors to specify timed text track for media elements like `video`
@@ -1112,10 +1109,9 @@ track :
             }
             msg
         )
-    -> List (Html b msg)
     -> Html c msg
-track =
-    coerce "track" Core.track
+track attrs =
+    coerce "track" Core.track attrs []
 
 
 {-| Represents a bitmap area for graphics rendering.
