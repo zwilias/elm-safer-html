@@ -1051,6 +1051,8 @@ video :
             , loop : Supported
             , preload : Supported
             , poster : Supported
+            , crossorigin : Supported
+            , muted : Supported
             }
             msg
         )
@@ -1070,6 +1072,8 @@ audio :
             , controls : Supported
             , loop : Supported
             , preload : Supported
+            , crossorigin : Supported
+            , muted : Supported
             }
             msg
         )
@@ -1478,6 +1482,7 @@ optgroup :
     List
         (Attribute
             { disabled : Supported
+            , label : Supported
             }
             msg
         )

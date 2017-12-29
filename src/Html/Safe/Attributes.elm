@@ -3,6 +3,7 @@ module Html.Safe.Attributes exposing (..)
 import Html as CoreHtml
 import Html.Attributes as Core
 import Html.Internal exposing (Supported, todo)
+import Json.Encode as Encode exposing (Value)
 
 
 type alias Attribute a msg =
@@ -12,6 +13,21 @@ type alias Attribute a msg =
 coerce : (a -> CoreHtml.Attribute msg) -> a -> Attribute b msg
 coerce =
     Html.Internal.attrCoerce
+
+
+stringProperty : String -> String -> Attribute compat msg
+stringProperty name val =
+    property name (Encode.string val)
+
+
+boolProperty : String -> Bool -> Attribute compat msg
+boolProperty name val =
+    property name (Encode.bool val)
+
+
+property : String -> Value -> Attribute compat msg
+property name =
+    coerce <| Core.property name
 
 
 
@@ -216,13 +232,9 @@ kind =
     coerce Core.kind
 
 
-
-{--TODO: maybe reintroduce once there's a better way to disambiguate imports
-{-| Specifies a user-readable title of the text `track`. -}
-label : String -> Attribute compat msg
-
-
---}
+label : String -> Attribute { compat | label : Supported } msg
+label =
+    coerce <| Core.attribute "label"
 
 
 {-| A two letter language code indicating the language of the `track` text data.
@@ -230,6 +242,18 @@ label : String -> Attribute compat msg
 srclang : String -> Attribute { compat | srclang : Supported } msg
 srclang =
     coerce Core.srclang
+
+
+{-| How the element handles crossorigin requests.
+-}
+crossorigin : String -> Attribute { compat | crossorigin : Supported } msg
+crossorigin =
+    stringProperty "crossoOrigin"
+
+
+muted : Bool -> Attribute { compat | muted : Supported } msg
+muted =
+    boolProperty "muted"
 
 
 
