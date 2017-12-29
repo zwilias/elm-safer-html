@@ -19,21 +19,45 @@ type alias Html a msg =
 {-| Represents the content of an HTML document. There is only one `body`
 element in a document.
 -}
-body : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+body :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 body =
     coerce "body" Core.body
 
 
 {-| Defines a section in a document.
 -}
-section : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+section :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 section =
     coerce "section" Core.section
 
 
 {-| Defines a section that contains only navigation links.
 -}
-nav : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+nav :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 nav =
     coerce "nav" Core.nav
 
@@ -41,7 +65,15 @@ nav =
 {-| Defines self-contained content that could exist independently of the rest
 of the content.
 -}
-article : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+article :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 article =
     coerce "article" Core.article
 
@@ -49,43 +81,99 @@ article =
 {-| Defines some content loosely related to the page content. If it is removed,
 the remaining content still makes sense.
 -}
-aside : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+aside :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 aside =
     coerce "aside" Core.aside
 
 
 {-| -}
-h1 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+h1 :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 h1 =
     coerce "h1" Core.h1
 
 
 {-| -}
-h2 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+h2 :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 h2 =
     coerce "h2" Core.h2
 
 
 {-| -}
-h3 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+h3 :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 h3 =
     coerce "h3" Core.h3
 
 
 {-| -}
-h4 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+h4 :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 h4 =
     coerce "h4" Core.h4
 
 
 {-| -}
-h5 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+h5 :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 h5 =
     coerce "h5" Core.h5
 
 
 {-| -}
-h6 : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+h6 :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 h6 =
     coerce "h6" Core.h6
 
@@ -93,7 +181,15 @@ h6 =
 {-| Defines the header of a page or section. It often contains a logo, the
 title of the web site, and a navigational table of content.
 -}
-header : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+header :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 header =
     coerce "header" Core.header
 
@@ -101,14 +197,30 @@ header =
 {-| Defines the footer for a page or section. It often contains a copyright
 notice, some links to legal information, or addresses to give feedback.
 -}
-footer : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+footer :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 footer =
     coerce "footer" Core.footer
 
 
 {-| Defines a section containing contact information.
 -}
-address : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+address :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 address =
     coerce "address" Core.address
 
@@ -116,7 +228,15 @@ address =
 {-| Defines the main or important content in the document. There is only one
 `main` element in the document.
 -}
-main_ : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+main_ :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 main_ =
     coerce "main_" Core.main_
 
@@ -127,7 +247,15 @@ main_ =
 
 {-| Defines a portion that should be displayed as a paragraph.
 -}
-p : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+p :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 p =
     coerce "p" Core.p
 
@@ -135,7 +263,15 @@ p =
 {-| Represents a thematic break between paragraphs of a section or article or
 any longer content.
 -}
-hr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+hr :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 hr =
     coerce "hr" Core.hr
 
@@ -143,28 +279,61 @@ hr =
 {-| Indicates that its content is preformatted and that this format must be
 preserved.
 -}
-pre : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+pre :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 pre =
     coerce "pre" Core.pre
 
 
 {-| Represents a content that is quoted from another source.
 -}
-blockquote : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+blockquote :
+    List
+        (Attribute
+            { cite : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 blockquote =
     coerce "blockquote" Core.blockquote
 
 
 {-| Defines an ordered list of items.
 -}
-ol : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+ol :
+    List
+        (Attribute
+            { reversed : Supported
+            , start : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 ol =
     coerce "ol" Core.ol
 
 
 {-| Defines an unordered list of items.
 -}
-ul : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+ul :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 ul =
     coerce "ul" Core.ul
 
@@ -187,42 +356,90 @@ li =
 {-| Defines a definition list, that is, a list of terms and their associated
 definitions.
 -}
-dl : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+dl :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 dl =
     coerce "dl" Core.dl
 
 
 {-| Represents a term defined by the next `dd`.
 -}
-dt : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+dt :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 dt =
     coerce "dt" Core.dt
 
 
 {-| Represents the definition of the terms immediately listed before it.
 -}
-dd : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+dd :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 dd =
     coerce "dd" Core.dd
 
 
 {-| Represents a figure illustrated as part of the document.
 -}
-figure : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+figure :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 figure =
     coerce "figure" Core.figure
 
 
 {-| Represents the legend of a figure.
 -}
-figcaption : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+figcaption :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 figcaption =
     coerce "figcaption" Core.figcaption
 
 
 {-| Represents a generic container with no special meaning.
 -}
-div : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+div :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 div =
     coerce "div" Core.div
 
@@ -233,21 +450,53 @@ div =
 
 {-| Represents a hyperlink, linking to another resource.
 -}
-a : List (Attribute { href : Supported } msg) -> List (Html b msg) -> Html c msg
+a :
+    List
+        (Attribute
+            { href : Supported
+            , shape : Supported
+            , target : Supported
+            , download : Supported
+            , downloadAs : Supported
+            , hreflang : Supported
+            , media : Supported
+            , ping : Supported
+            , rel : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 a =
     coerce "a" Core.a
 
 
 {-| Represents emphasized text, like a stress accent.
 -}
-em : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+em :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 em =
     coerce "em" Core.em
 
 
 {-| Represents especially important text.
 -}
-strong : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+strong :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 strong =
     coerce "strong" Core.strong
 
@@ -255,28 +504,60 @@ strong =
 {-| Represents a side comment, that is, text like a disclaimer or a
 copyright, which is not essential to the comprehension of the document.
 -}
-small : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+small :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 small =
     coerce "small" Core.small
 
 
 {-| Represents content that is no longer accurate or relevant.
 -}
-s : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+s :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 s =
     coerce "s" Core.s
 
 
 {-| Represents the title of a work.
 -}
-cite : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+cite :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 cite =
     coerce "cite" Core.cite
 
 
 {-| Represents an inline quotation.
 -}
-q : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+q :
+    List
+        (Attribute
+            { cite : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 q =
     coerce "q" Core.q
 
@@ -284,7 +565,15 @@ q =
 {-| Represents a term whose definition is contained in its nearest ancestor
 content.
 -}
-dfn : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+dfn :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 dfn =
     coerce "dfn" Core.dfn
 
@@ -292,7 +581,15 @@ dfn =
 {-| Represents an abbreviation or an acronym; the expansion of the
 abbreviation can be represented in the title attribute.
 -}
-abbr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+abbr :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 abbr =
     coerce "abbr" Core.abbr
 
@@ -300,14 +597,31 @@ abbr =
 {-| Represents a date and time value; the machine-readable equivalent can be
 represented in the datetime attribute.
 -}
-time : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+time :
+    List
+        (Attribute
+            { datetime : Supported
+            , pubdate : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 time =
     coerce "time" Core.time
 
 
 {-| Represents computer code.
 -}
-code : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+code :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 code =
     coerce "code" Core.code
 
@@ -317,14 +631,30 @@ actual mathematical expression or programming context, an identifier
 representing a constant, a symbol identifying a physical quantity, a function
 parameter, or a mere placeholder in prose.
 -}
-var : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+var :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 var =
     coerce "var" Core.var
 
 
 {-| Represents the output of a program or a computer.
 -}
-samp : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+samp :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 samp =
     coerce "samp" Core.samp
 
@@ -332,21 +662,45 @@ samp =
 {-| Represents user input, often from the keyboard, but not necessarily; it
 may represent other input, like transcribed voice commands.
 -}
-kbd : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+kbd :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 kbd =
     coerce "kbd" Core.kbd
 
 
 {-| Represent a subscript.
 -}
-sub : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+sub :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 sub =
     coerce "sub" Core.sub
 
 
 {-| Represent a superscript.
 -}
-sup : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+sup :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 sup =
     coerce "sup" Core.sup
 
@@ -355,7 +709,15 @@ sup =
 different quality, such as a taxonomic designation, a technical term, an
 idiomatic phrase, a thought, or a ship name.
 -}
-i : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+i :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 i =
     coerce "i" Core.i
 
@@ -364,7 +726,15 @@ i =
 purposes. It doesn't convey extra importance and doesn't imply an alternate
 voice.
 -}
-b : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+b :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 b =
     coerce "b" Core.b
 
@@ -373,7 +743,15 @@ b =
 presentation is underlining, such labeling the text as being misspelt or
 labeling a proper name in Chinese text.
 -}
-u : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+u :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 u =
     coerce "u" Core.u
 
@@ -381,7 +759,15 @@ u =
 {-| Represents text highlighted for reference purposes, that is for its
 relevance in another context.
 -}
-mark : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+mark :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 mark =
     coerce "mark" Core.mark
 
@@ -391,14 +777,30 @@ presented alongside the text. This is often used in conjunction with East Asian
 language where the annotations act as a guide for pronunciation, like the
 Japanese furigana.
 -}
-ruby : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+ruby :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 ruby =
     coerce "ruby" Core.ruby
 
 
 {-| Represents the text of a ruby annotation.
 -}
-rt : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+rt :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 rt =
     coerce "rt" Core.rt
 
@@ -407,7 +809,15 @@ rt =
 annotation in an alternate way by browsers not supporting the standard display
 for annotations.
 -}
-rp : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+rp :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 rp =
     coerce "rp" Core.rp
 
@@ -416,7 +826,15 @@ rp =
 bidirectional text formatting. It allows embedding a span of text with a
 different, or unknown, directionality.
 -}
-bdi : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+bdi :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 bdi =
     coerce "bdi" Core.bdi
 
@@ -424,23 +842,47 @@ bdi =
 {-| Represents the directionality of its children, in order to explicitly
 override the Unicode bidirectional algorithm.
 -}
-bdo : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+bdo :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 bdo =
     coerce "bdo" Core.bdo
 
 
 {-| Represents text with no specific meaning. This has to be used when no other
 text-semantic element conveys an adequate meaning, which, in this case, is
-often brought by global attributes like `class`, `lang`, or `dir`.
+often brought by globalAttributes attributes like `class`, `lang`, or `dir`.
 -}
-span : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+span :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 span =
     coerce "span" Core.span
 
 
 {-| Represents a line break.
 -}
-br : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+br :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 br =
     coerce "br" Core.br
 
@@ -448,7 +890,15 @@ br =
 {-| Represents a line break opportunity, that is a suggested point for
 wrapping text in order to improve readability of text split on several lines.
 -}
-wbr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+wbr :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 wbr =
     coerce "wbr" Core.wbr
 
@@ -459,14 +909,32 @@ wbr =
 
 {-| Defines an addition to the document.
 -}
-ins : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+ins :
+    List
+        (Attribute
+            { cite : Supported
+            , datetime : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 ins =
     coerce "ins" Core.ins
 
 
 {-| Defines a removal from the document.
 -}
-del : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+del :
+    List
+        (Attribute
+            { cite : Supported
+            , datetime : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 del =
     coerce "del" Core.del
 
@@ -484,6 +952,9 @@ img :
             , height : Supported
             , width : Supported
             , alt : Supported
+            , ismap : Supported
+            , usemap : Supported
+            , align : Supported
             }
             msg
         )
@@ -505,6 +976,7 @@ iframe :
             , seamless : Supported
             , srcdoc : Supported
             , name : Supported
+            , align : Supported
             }
             msg
         )
@@ -543,6 +1015,7 @@ object :
             , width : Supported
             , type_ : Supported
             , name : Supported
+            , form : Supported
             }
             msg
         )
@@ -617,6 +1090,7 @@ source :
         (Attribute
             { src : Supported
             , type_ : Supported
+            , media : Supported
             }
             msg
         )
@@ -654,7 +1128,15 @@ canvas =
 
 {-| Defines a mathematical formula.
 -}
-math : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+math :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 math =
     coerce "math" Core.math
 
@@ -665,70 +1147,157 @@ math =
 
 {-| Represents data with more than one dimension.
 -}
-table : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+table :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 table =
     coerce "table" Core.table
 
 
 {-| Represents the title of a table.
 -}
-caption : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+caption :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 caption =
     coerce "caption" Core.caption
 
 
 {-| Represents a set of one or more columns of a table.
 -}
-colgroup : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+colgroup :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 colgroup =
     coerce "colgroup" Core.colgroup
 
 
 {-| Represents a column of a table.
 -}
-col : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+col :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 col =
     coerce "col" Core.col
 
 
 {-| Represents the block of rows that describes the concrete data of a table.
 -}
-tbody : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+tbody :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 tbody =
     coerce "tbody" Core.tbody
 
 
 {-| Represents the block of rows that describes the column labels of a table.
 -}
-thead : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+thead :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 thead =
     coerce "thead" Core.thead
 
 
 {-| Represents the block of rows that describes the column summaries of a table.
 -}
-tfoot : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+tfoot :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 tfoot =
     coerce "tfoot" Core.tfoot
 
 
 {-| Represents a row of cells in a table.
 -}
-tr : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+tr :
+    List
+        (Attribute
+            { align : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 tr =
     coerce "tr" Core.tr
 
 
 {-| Represents a data cell in a table.
 -}
-td : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+td :
+    List
+        (Attribute
+            { align : Supported
+            , colspan : Supported
+            , rowspan : Supported
+            , header : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 td =
     coerce "td" Core.td
 
 
 {-| Represents a header cell in a table.
 -}
-th : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+th :
+    List
+        (Attribute
+            { align : Supported
+            , colspan : Supported
+            , rowspan : Supported
+            , header : Supported
+            , scope : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 th =
     coerce "th" Core.th
 
@@ -751,6 +1320,7 @@ form :
             , method : Supported
             , name : Supported
             , novalidate : Supported
+            , target : Supported
             }
             msg
         )
@@ -767,6 +1337,7 @@ fieldset :
         (Attribute
             { disabled : Supported
             , name : Supported
+            , form : Supported
             }
             msg
         )
@@ -778,7 +1349,15 @@ fieldset =
 
 {-| Represents the caption for a `fieldset`.
 -}
-legend : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+legend :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 legend =
     coerce "legend" Core.legend
 
@@ -789,6 +1368,7 @@ label :
     List
         (Attribute
             { for : Supported
+            , form : Supported
             }
             msg
         )
@@ -798,37 +1378,43 @@ label =
     coerce "label" Core.label
 
 
+type alias InputAttribute msg =
+    Attribute
+        { src : Supported
+        , height : Supported
+        , width : Supported
+        , alt : Supported
+        , type_ : Supported
+        , value : Supported
+        , defaultValue : Supported
+        , checked : Supported
+        , placeholder : Supported
+        , accept : Supported
+        , autocomplete : Supported
+        , autofocus : Supported
+        , disabled : Supported
+        , formaction : Supported
+        , list : Supported
+        , minlength : Supported
+        , maxLength : Supported
+        , multiple : Supported
+        , name : Supported
+        , pattern : Supported
+        , readonly : Supported
+        , required : Supported
+        , size : Supported
+        , form : Supported
+        , max : Supported
+        , min : Supported
+        , step : Supported
+        }
+        msg
+
+
 {-| Represents a typed data field allowing the user to edit the data.
 -}
 input :
-    List
-        (Attribute
-            { src : Supported
-            , height : Supported
-            , width : Supported
-            , alt : Supported
-            , type_ : Supported
-            , value : Supported
-            , defaultValue : Supported
-            , checked : Supported
-            , placeholder : Supported
-            , accept : Supported
-            , autocomplete : Supported
-            , autofocus : Supported
-            , disabled : Supported
-            , formaction : Supported
-            , list : Supported
-            , minlength : Supported
-            , maxLength : Supported
-            , multiple : Supported
-            , name : Supported
-            , pattern : Supported
-            , readonly : Supported
-            , required : Supported
-            , size : Supported
-            }
-            msg
-        )
+    List (InputAttribute msg)
     -> List (Html b msg)
     -> Html c msg
 input =
@@ -846,6 +1432,7 @@ button :
             , disabled : Supported
             , enctype : Supported
             , name : Supported
+            , form : Supported
             }
             msg
         )
@@ -866,6 +1453,7 @@ select :
             , name : Supported
             , required : Supported
             , size : Supported
+            , form : Supported
             }
             msg
         )
@@ -877,7 +1465,15 @@ select =
 
 {-| Represents a set of predefined options for other controls.
 -}
-datalist : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+datalist :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 datalist =
     coerce "datalist" Core.datalist
 
@@ -931,6 +1527,10 @@ textarea :
             , name : Supported
             , readonly : Supported
             , required : Supported
+            , form : Supported
+            , cols : Supported
+            , rows : Supported
+            , wrap : Supported
             }
             msg
         )
@@ -948,6 +1548,9 @@ keygen :
             { autofocus : Supported
             , disabled : Supported
             , name : Supported
+            , form : Supported
+            , challenge : Supported
+            , keytype : Supported
             }
             msg
         )
@@ -964,6 +1567,7 @@ output :
         (Attribute
             { name : Supported
             , for : Supported
+            , form : Supported
             }
             msg
         )
@@ -979,6 +1583,8 @@ progress :
     List
         (Attribute
             { value : Supported
+            , form : Supported
+            , max : Supported
             }
             msg
         )
@@ -995,6 +1601,9 @@ meter :
     List
         (Attribute
             { value : Supported
+            , form : Supported
+            , max : Supported
+            , min : Supported
             }
             msg
         )
@@ -1011,21 +1620,45 @@ meter =
 {-| Represents a widget from which the user can obtain additional information
 or controls.
 -}
-details : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+details :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 details =
     coerce "details" Core.details
 
 
 {-| Represents a summary, caption, or legend for a given `details`.
 -}
-summary : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+summary :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 summary =
     coerce "summary" Core.summary
 
 
 {-| Represents a command that the user can invoke.
 -}
-menuitem : List (Attribute a msg) -> List (Html b msg) -> Html c msg
+menuitem :
+    List
+        (Attribute
+            { globalAttributes : Supported
+            }
+            msg
+        )
+    -> List (Html b msg)
+    -> Html c msg
 menuitem =
     coerce "menuitem" Core.menuitem
 
