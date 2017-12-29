@@ -958,10 +958,9 @@ img :
             }
             msg
         )
-    -> List (Html b msg)
     -> Html c msg
-img =
-    coerce "img" Core.img
+img attrs =
+    coerce "img" Core.img attrs []
 
 
 {-| Embedded an HTML document.
@@ -1199,10 +1198,9 @@ col :
             }
             msg
         )
-    -> List (Html b msg)
     -> Html c msg
-col =
-    coerce "col" Core.col
+col attrs =
+    coerce "col" Core.col attrs []
 
 
 {-| Represents the block of rows that describes the concrete data of a table.
@@ -1538,26 +1536,6 @@ textarea :
     -> Html c msg
 textarea =
     coerce "textarea" Core.textarea
-
-
-{-| Represents a key-pair generator control.
--}
-keygen :
-    List
-        (Attribute
-            { autofocus : Supported
-            , disabled : Supported
-            , name : Supported
-            , form : Supported
-            , challenge : Supported
-            , keytype : Supported
-            }
-            msg
-        )
-    -> List (Html b msg)
-    -> Html c msg
-keygen =
-    coerce "keygen" Core.keygen
 
 
 {-| Represents the result of a calculation.
